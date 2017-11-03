@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ActionSheetController, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the VisitPage page.
@@ -15,15 +15,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VisitPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public showImages: boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private actionSheetCtrl: ActionSheetController) {
   }
 
   public addPictures(): void {
+    this.actionSheetCtrl.create({
+      title: 'O que deseja?',
+      buttons: [
+        {
+          text: 'Usar a câmera',
+          handler: () => {
+            this.showImages = true;
 
+          }
+        },
+        {
+          text: 'Pegar da galeria',
+          handler: () => {
+            this.showImages = true;
+          }
+        },
+        { text: 'Cancelar', role: 'cancel' }
+      ]
+      }).present();
   }
 
   public finish(): void {
-
+    this.navCtrl.push('ProjectPage');
   }
 
   ionViewDidLoad() {

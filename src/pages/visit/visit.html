@@ -21,7 +21,7 @@
     </ion-item>
     <ion-item text-wrap>
       <ion-icon item-left name="pin"></ion-icon>
-      <h2> Av Portugal 4075 </h2>
+      <h2> Av Portugal, 4075 </h2>
     </ion-item>
     <ion-item text-wrap>
       <ion-icon item-left name="clock"></ion-icon>
@@ -44,8 +44,17 @@
     <ion-icon name="camera"></ion-icon>
     Adicionar fotos
   </button>
+
+  <div class="photos" *ngIf="showImages">
+    <img src="assets/imgs/foto1.jpg" alt="">
+    <img src="assets/imgs/foto2.jpg" alt="">
+    <img src="assets/imgs/foto3.jpg" alt="">
+  </div>
+
   <button ion-button (click)="finish()" block color="secondary" icon-left>
-    <ion-icon name="camera"></ion-icon>
-    Finalizar
+    <ion-icon name="checkmark"></ion-icon>
+    Finalizar Visita
   </button>
+
+
 </ion-content>

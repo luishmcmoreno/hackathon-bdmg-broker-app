@@ -44,15 +44,19 @@
         <ion-icon name="document"></ion-icon>
         Incluir projeto
       </button>
+      <div class="pdf" *ngIf="showPdf">
+          <ion-icon name="document"></ion-icon>
+          <p>projeto-fotovoltaico.pdf</p>
+      </div>
     </ion-item>
     <ion-item>
-      <ion-label floating> Data inicial</ion-label>
-      <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate"></ion-datetime>
+      <ion-label floating> Data prevista para instalação</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate"></ion-datetime>
     </ion-item>
     <ion-item>
-      <ion-label floating> Data final</ion-label>
-      <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate"></ion-datetime>
+      <ion-label floating> Data prevista para conclusão</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate"></ion-datetime>
     </ion-item>
   </ion-list>
-  <button ion-button block (click)="submit()" color="dark">Submeter</button>
+  <button ion-button block (click)="submit()" color="dark">Enviar ao banco</button>
 </ion-content>

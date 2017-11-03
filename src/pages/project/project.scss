@@ -1,3 +1,11 @@
 page-project {
-
+  .pdf {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: red;
+  }
 }

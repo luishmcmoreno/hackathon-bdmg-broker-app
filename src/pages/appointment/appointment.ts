@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AppointmentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,15 +8,36 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AppointmentPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private toastCtrl: ToastController, public loadingCtrl: LoadingController) {
   }
 
   public accept(): void {
-
+    this._handleAction('O agendamento foi realizado com sucesso.');
   }
 
   public reject(): void {
+    this._handleAction('O agendamento foi removido com sucesso.');
 
+  }
+
+  private _handleAction(text: string) {
+    let loader = this.loadingCtrl.create({
+      content: 'Aguarde...',
+      spinner: 'bubbles'
+    });
+    loader.present();
+    setTimeout(() => {
+      loader.dismiss();
+      this.navCtrl.pop()
+        .then(() => {
+          this.toastCtrl.create({
+            message: text,
+            duration: 2000,
+            closeButtonText: 'Ok'
+          }).present();
+        });
+    }, 1000);
   }
 
   ionViewDidLoad() {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, LoadingController, NavController, NavParams, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the ProjectPage page.
@@ -17,8 +17,10 @@ export class ProjectPage {
 
   private today: string;
   private maxDate: string;
+  public showPdf: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private loadingCtrl: LoadingController, private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -29,4 +31,27 @@ export class ProjectPage {
     this.maxDate = maxDate.toISOString();
   }
 
+  uploadFile() {
+    this.showPdf = true;
+  }
+
+
+  submit() {
+    const loader = this.loadingCtrl.create({
+      content: 'Enviando ao banco...',
+      spinner: 'bubbles'
+    });
+    loader.present();
+
+    setTimeout(() => {
+      loader.dismiss();
+      this.toastCtrl.create({
+        message: 'O projeto foi submetido para análise do BDMG. Obrigado',
+        duration: 3500,
+        closeButtonText: 'Ok'
+      }).present();
+      this.navCtrl.setRoot('VisitsPage');
+    }, 1000);
+
+  }
 }
