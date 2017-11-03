@@ -18,6 +18,14 @@ export class AppointmentPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  public accept(): void {
+
+  }
+
+  public reject(): void {
+
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AppointmentPage');
   }

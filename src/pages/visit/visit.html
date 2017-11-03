@@ -6,13 +6,46 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>visit</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Detalhe da visita</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item text-wrap>
+      <ion-icon item-left name="home"></ion-icon>
+      <h2> Clicar Engenharia </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="pin"></ion-icon>
+      <h2> Av Portugal 4075 </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="clock"></ion-icon>
+      <h2> 16/10 - 12:00 as 18:00 </h2>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Metragem</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Placas</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Observações</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="addPictures()" block color="dark" icon-left>
+    <ion-icon name="camera"></ion-icon>
+    Adicionar fotos
+  </button>
+  <button ion-button (click)="finish()" block color="secondary" icon-left>
+    <ion-icon name="camera"></ion-icon>
+    Finalizar
+  </button>
 </ion-content>

@@ -6,13 +6,53 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>project</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Detalhe do projeto</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item text-wrap>
+      <ion-icon item-left name="home"></ion-icon>
+      <h2> Clicar Engenharia </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="pin"></ion-icon>
+      <h2> Av Portugal 4075 </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="clock"></ion-icon>
+      <h2> 16/10 - 12:00 as 18:00 </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="resize"></ion-icon>
+      <h2> Metragem: 10m </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="information"></ion-icon>
+      <h2> 10 placas </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="ios-more"></ion-icon>
+      <h2> Obs: Sem observações </h2>
+    </ion-item>
+    <ion-item>
+      <button ion-button block (click)="uploadFile()" icon-left>
+        <ion-icon name="document"></ion-icon>
+        Incluir projeto
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Data inicial</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Data final</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="submit()" color="dark">Submeter</button>
 </ion-content>

@@ -15,11 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProjectPage {
 
+  private today: string;
+  private maxDate: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProjectPage');
+    this.today = new Date().toISOString();
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 100);
+    this.maxDate = maxDate.toISOString();
   }
 
 }

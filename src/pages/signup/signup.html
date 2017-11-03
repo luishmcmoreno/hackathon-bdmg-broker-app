@@ -6,13 +6,44 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>signup</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Cadastro</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>CNPJ</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <button margin-top ion-button block icon-left color="dark">
+      <ion-icon name="camera"></ion-icon>
+      Logomarca
+    </button>
+
+    <ion-item>
+      <ion-label floating>Telefone</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>E-mail</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="primary" block (click)="signup()"> Cadastrar </button>
 </ion-content>

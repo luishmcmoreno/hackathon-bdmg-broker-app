@@ -18,6 +18,10 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  public login(): void {
+    this.navCtrl.setRoot('HometabsPage');
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }

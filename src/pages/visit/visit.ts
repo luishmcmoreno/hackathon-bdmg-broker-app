@@ -18,6 +18,14 @@ export class VisitPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  public addPictures(): void {
+
+  }
+
+  public finish(): void {
+
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad VisitPage');
   }

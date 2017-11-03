@@ -18,6 +18,10 @@ export class SignupPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  public signup(): void {
+    this.navCtrl.setRoot('HometabsPage');
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }

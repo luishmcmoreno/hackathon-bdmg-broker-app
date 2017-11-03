@@ -6,13 +6,34 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>appointment</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Detalhe do agendamento</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item text-wrap>
+      <ion-icon item-left name="home"></ion-icon>
+      <h2> Clicar Engenharia </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="pin"></ion-icon>
+      <h2> Av Portugal 4075 </h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon item-left name="clock"></ion-icon>
+      <h2> 16/10 - 12:00 as 18:00 </h2>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col>
+      <button ion-button color="secondary" (click)="accept()" block>Aceitar</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button color="danger" (click)="reject()" block>Rejeitar</button>
+    </ion-col>
+  </ion-row>
 </ion-content>
