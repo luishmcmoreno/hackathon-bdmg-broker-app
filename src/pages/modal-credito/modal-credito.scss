@@ -1,0 +1,15 @@
+page-modal-credito {
+  .container-flex {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+      font-size: 8em;
+    }
+    p {
+      padding-top: 20px;
+    }
+  }
+}

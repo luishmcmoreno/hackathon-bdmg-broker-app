@@ -1,0 +1,19 @@
+page-modal-bdmg {
+
+  .container-flex {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 200px;
+      max-height: 200px;
+    }
+    p {
+      padding-top: 20px;
+    }
+  }
+
+
+}

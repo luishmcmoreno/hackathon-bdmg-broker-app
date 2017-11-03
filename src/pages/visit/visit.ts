@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActionSheetController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ActionSheetController, IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the VisitPage page.
@@ -18,7 +18,8 @@ export class VisitPage {
   public showImages: boolean;
   public visit: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private actionSheetCtrl: ActionSheetController) {
+    private actionSheetCtrl: ActionSheetController, private loadingCtrl: LoadingController,
+    private toastCtrl: ToastController) {
   }
 
   public addPictures(): void {
@@ -44,7 +45,23 @@ export class VisitPage {
   }
 
   public finish(): void {
-    this.navCtrl.push('ProjectPage', {project: this.visit});
+    const loader = this.loadingCtrl.create({
+      content: 'Finalizando visita...',
+      spinner: 'bubbles'
+    });
+    loader.present();
+
+    setTimeout(() => {
+      loader.dismiss();
+      this.toastCtrl.create({
+        message: 'Visita finalizada com sucesso, insira os dados do projeto para que ele possa ser enviado a análise.',
+        closeButtonText: 'Ok',
+        showCloseButton: true,
+        duration: 5000
+      }).present();
+      this.navCtrl.push('ProjectPage', {project: this.visit});
+    }, 2000);
+
   }
 
   ionViewDidLoad() {

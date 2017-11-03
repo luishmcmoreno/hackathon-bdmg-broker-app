@@ -1,3 +1,6 @@
+import { ModalCreditoPageModule } from '../pages/modal-credito/modal-credito.module';
+import { ModalBdmgPageModule } from '../pages/modal-bdmg/modal-bdmg.module';
+import { ModalBdmgPage } from '../pages/modal-bdmg/modal-bdmg';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -13,11 +16,14 @@ import { BdmgProvider } from '../providers/bdmg/bdmg';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ModalBdmgPageModule,
+    ModalCreditoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    ModalBdmgPage
   ],
   providers: [
     StatusBar,

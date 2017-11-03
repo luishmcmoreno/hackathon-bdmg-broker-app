@@ -44,19 +44,29 @@
         <ion-icon name="document"></ion-icon>
         Incluir projeto
       </button>
-      <div class="pdf" *ngIf="showPdf">
+      <div class="pdf" *ngIf="showPdf || project?.status">
           <ion-icon name="document"></ion-icon>
           <p>projeto-fotovoltaico.pdf</p>
       </div>
     </ion-item>
     <ion-item>
       <ion-label floating> Data prevista para instalação</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate"></ion-datetime>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate" [(ngModel)]="startDate"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label floating> Data prevista para conclusão</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate"></ion-datetime>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="MMM DD YYYY" [min]="today" [max]="maxDate" [(ngModel)]="endDate"></ion-datetime>
     </ion-item>
+    <ion-item *ngIf="project?.status">
+        <button ion-button block (click)="uploadCemigFile()" icon-left>
+          <ion-icon name="document"></ion-icon>
+          Incluir protocolo CEMIG
+        </button>
+        <div class="pdf cemig" *ngIf="showCemigFile">
+            <ion-icon name="document"></ion-icon>
+            <p>protocolo-cemig.pdf</p>
+        </div>
+      </ion-item>
   </ion-list>
   <button ion-button block (click)="submit()" color="dark">Enviar ao banco</button>
 </ion-content>

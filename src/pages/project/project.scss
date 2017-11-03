@@ -1,5 +1,8 @@
 page-project {
   .pdf {
+    &.cemig {
+      color: blue;
+    }
     margin-top: 5px;
     display: flex;
     flex-direction: column;
