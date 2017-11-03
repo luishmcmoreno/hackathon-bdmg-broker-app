@@ -8,6 +8,7 @@ import { IonicPage, NavController, NavParams, ToastController, LoadingController
 })
 export class AppointmentPage {
 
+  public appointment: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private toastCtrl: ToastController, public loadingCtrl: LoadingController) {
   }
@@ -41,6 +42,8 @@ export class AppointmentPage {
   }
 
   ionViewDidLoad() {
+    this.appointment = this.navParams.get('appointment');
+    console.log(this.navParams.get('appointment'));
     console.log('ionViewDidLoad AppointmentPage');
   }
 

@@ -15,6 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProjectsPage {
 
+  public list: any[] = [
+    {name: 'Clicar Engenharia', street: 'Av Portugal, 1023', date: '16/10 - 12:00 as 18:00'},
+    {name: 'Restaurante Farroupilha', street: 'Av Portugal, 4075', date: '17/10 - 12:00 as 18:00'}
+  ]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

@@ -17,15 +17,15 @@
   <ion-list>
     <ion-item text-wrap>
       <ion-icon item-left name="home"></ion-icon>
-      <h2> Restaurante Farroupilha </h2>
+      <h2> {{ appointment?.name }} </h2>
     </ion-item>
     <ion-item text-wrap>
       <ion-icon item-left name="pin"></ion-icon>
-      <h2> Av Abraão Caram, 1271 </h2>
+      <h2> {{ appointment?.street }} </h2>
     </ion-item>
     <ion-item text-wrap>
       <ion-icon item-left name="clock"></ion-icon>
-      <h2> 22/10 - 12:00 as 16:00 </h2>
+      <h2> {{ appointment?.date }} </h2>
     </ion-item>
   </ion-list>
   <ion-row>

@@ -16,6 +16,7 @@ import { ActionSheetController, IonicPage, NavController, NavParams } from 'ioni
 export class VisitPage {
 
   public showImages: boolean;
+  public visit: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private actionSheetCtrl: ActionSheetController) {
   }
@@ -43,10 +44,11 @@ export class VisitPage {
   }
 
   public finish(): void {
-    this.navCtrl.push('ProjectPage');
+    this.navCtrl.push('ProjectPage', {project: this.visit});
   }
 
   ionViewDidLoad() {
+    this.visit = this.navParams.get('visit');
     console.log('ionViewDidLoad VisitPage');
   }
 

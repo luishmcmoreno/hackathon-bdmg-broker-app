@@ -18,13 +18,16 @@ export class ProjectPage {
   private today: string;
   private maxDate: string;
   public showPdf: boolean;
+  public project: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private loadingCtrl: LoadingController, private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProjectPage');
+    this.project = this.navParams.get('project');
+
+
     this.today = new Date().toISOString();
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 100);

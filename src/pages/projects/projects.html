@@ -15,32 +15,11 @@
 
 <ion-content>
   <ion-list>
-    <ion-item text-wrap tappable navPush="ProjectPage">
+    <ion-item text-wrap tappable navPush="ProjectPage" [navParams]="{project: item}" *ngFor="let item of list">
       <ion-icon item-left name="folder"></ion-icon>
-      <h2> Clicar Engenharia </h2>
-      <p> Av Portugal 4075 </p>
-      <p> 16/10 - 12:00 as 18:00 </p>
-      <ion-icon name="ios-arrow-forward-outline" item-right></ion-icon>
-    </ion-item>
-    <ion-item text-wrap tappable navPush="ProjectPage">
-      <ion-icon item-left name="folder"></ion-icon>
-      <h2> Clicar Engenharia </h2>
-      <p> Av Portugal 4075 </p>
-      <p> 16/10 - 12:00 as 18:00 </p>
-      <ion-icon name="ios-arrow-forward-outline" item-right></ion-icon>
-    </ion-item>
-    <ion-item text-wrap tappable navPush="ProjectPage">
-      <ion-icon item-left name="folder"></ion-icon>
-      <h2> Clicar Engenharia </h2>
-      <p> Av Portugal 4075 </p>
-      <p> 16/10 - 12:00 as 18:00 </p>
-      <ion-icon name="ios-arrow-forward-outline" item-right></ion-icon>
-    </ion-item>
-    <ion-item text-wrap tappable navPush="ProjectPage">
-      <ion-icon item-left name="folder"></ion-icon>
-      <h2> Clicar Engenharia </h2>
-      <p> Av Portugal 4075 </p>
-      <p> 16/10 - 12:00 as 18:00 </p>
+      <h2> {{ item?.name }} </h2>
+      <p> {{ item?.street }} </p>
+      <p> {{ item?.date }} </p>
       <ion-icon name="ios-arrow-forward-outline" item-right></ion-icon>
     </ion-item>
   </ion-list>
