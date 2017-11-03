@@ -14,7 +14,7 @@ export class AppointmentPage {
   }
 
   public accept(): void {
-    this._handleAction('O agendamento foi realizado com sucesso.');
+    this._handleAction('Uma visita foi marcada para este agendamento.');
   }
 
   public reject(): void {
